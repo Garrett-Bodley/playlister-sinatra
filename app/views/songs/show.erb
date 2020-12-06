@@ -1,0 +1,15 @@
+<h1><%=@song.name%></h1>
+
+<%=@message unless !@message%>
+
+<h3>Artist:</h3>
+<ol>
+  <li><a href='/artists/<%=@song.artist.slug%>'><%=@song.artist.name%></a></li>
+</ol>
+
+<h3>Genres:</h3>
+<ol>
+  <%@song.genres.each do |genre|%>
+    <li><a href='/genres/<%=genre.slug%>'><%=genre.name%></a></li>
+  <%end%>
+</ol>
